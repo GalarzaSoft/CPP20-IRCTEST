@@ -1,7 +1,6 @@
 cmake_minimum_required(VERSION 3.30.0)
 
 string(REPLACE "\\" "/" VCPKG_ROOT_PATH "$ENV{VCPKG_ROOT}")
-#message (STATUS, "${VCPKG_ROOT_PATH}/scripts/buildsystems/vcpkg.cmake")
 set (CMAKE_TOOLCHAIN_FILE  "${VCPKG_ROOT_PATH}/scripts/buildsystems/vcpkg.cmake")#"D:/dev/vcpkg/scripts/buildsystems/vcpkg.cmake")
 
 project(CPP20-IRCTEST)
@@ -15,8 +14,6 @@ set(CMAKE_FIND_ROOT_PATH_MODE_PACKAGE NEVER)
 
 # Find Boost with Asio
 find_package(Boost CONFIG REQUIRED COMPONENTS system asio)
-
-#target_link_libraries(main PRIVATE Boost::asio)
 
 # Add the library project
 add_subdirectory(irclibrary )
